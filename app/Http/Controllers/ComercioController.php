@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comercio;
-use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\ComercioResource;
-use Illuminate\Http\Requests\StoreComercioRequest;
-use Illuminate\Http\Requests\UpdateComercioRequest;
+use App\Traits\HttpResponses;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\ComercioResource;
+use App\Http\Requests\StoreComercioRequest;
+use App\Http\Requests\UpdateComercioRequest;
 
 class ComercioController extends Controller
 {
@@ -15,7 +16,7 @@ class ComercioController extends Controller
 
     public function index()
     {
-        return ComercioResource::all();
+        return ComercioResource::collection(Comercio::all());
     }
 
     public function store(StoreComercioRequest $request)
@@ -55,12 +56,12 @@ class ComercioController extends Controller
 
     public function show(Comercio $comercio)
     {
-        return ComercioResource($comercio);
+        return new ComercioResource($comercio);
     }
 
     public function update(Request $request, Comercio $comercio)
     {
-        $comercio->update(request->all());
+        $comercio->update($request->all());
 
         return new ComercioResource($comercio);
 
@@ -68,10 +69,10 @@ class ComercioController extends Controller
 
     public function destroy(Comercio $comercio)
     {
-        $comercio = Comercio::find($id);
-        if (is_null($comercio)) {
-            return response()->json('No se pudo realizar la operación correctamente', 404);
-        }
+        // $comercio = Comercio::find($id);
+        // if (is_null($comercio)) {
+        //     return response()->json('No se pudo realizar la operación correctamente', 404);
+        // }
 
         $comercio->delete();
         return response(null, 204);

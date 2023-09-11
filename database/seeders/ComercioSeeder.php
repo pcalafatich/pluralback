@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ComercioSeeder extends Seeder
 {
@@ -40,15 +41,15 @@ class ComercioSeeder extends Seeder
         'instagram'=>'No posee',
         'twitter'=>'No posee',
         'estado'=>1,
-        'created_at'=>NULL,
-        'updated_at'=>NULL
+        'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+        'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
 		));
 
 		DB::table('comercios')->insert(array(
-        'id'=>1,
+        'id'=>2,
         'denominacion'=>'Comercio 002',
         'razon_social'=>'Las Segunda SA',
-        'id_sucursal'=>1,
+        'sucursal_id'=>1,
         'zona'=>'1',
         'promotor_id'=>'1',
         'responsable'=>'Leo Guerriero',
@@ -70,8 +71,8 @@ class ComercioSeeder extends Seeder
         'instagram'=>'No posee',
         'twitter'=>'No posee',
         'estado'=>1,
-        'created_at'=>NULL,
-        'updated_at'=>NULL
+        'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+        'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));
 
     }
