@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comercio;
+use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\ComerciResource;
 use Illuminate\Http\Requests\StoreComercioRequest;
@@ -52,7 +53,6 @@ class ComercioController extends Controller
         return new ComercioResource($comercio);
     }
 
-
     public function show(Comercio $comercio)
     {
         return ComercioResource($comercio);
@@ -60,15 +60,13 @@ class ComercioController extends Controller
 
     public function update(Request $request, Comercio $comercio)
     {
-        // $request->validated($request->all());
-
         $comercio->update(request->all());
 
         return new ComercioResource($comercio);
 
     }
 
-    public function destroy($id)
+    public function destroy(Comercio $comercio)
     {
         $comercio = Comercio::find($id);
         if (is_null($comercio)) {
@@ -76,6 +74,15 @@ class ComercioController extends Controller
         }
 
         $comercio->delete();
-        return response()->noContent();
+        return response(null, 204);
+
+
+    }
+
+    private function isNotAuthorized($comercio)
+    {
+        if(Auth::user()->id !== $comercio->user_id) {
+            return $this->error('', 'You are not authorized to make this request', 403);
+        }
     }
 }
