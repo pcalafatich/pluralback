@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comercio;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\ComerciResource;
+use Illuminate\Http\Resources\ComercioResource;
 use Illuminate\Http\Requests\StoreComercioRequest;
 use Illuminate\Http\Requests\UpdateComercioRequest;
 
