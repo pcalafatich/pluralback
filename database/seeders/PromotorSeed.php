@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class SucursalSeeder extends Seeder
+class PromotorSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,13 +15,13 @@ class SucursalSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('sucursales')->insert(array(
+        DB::table('promotores')->insert(array(
             'id'=>1,
-            'nombre'=>'Sucursal 001',
-            'domicilio'=>'Av Independencia 1234',
-            'estado'=>'1',
+            'nombre'=>'Promotor 001',
+            'comercio_id'=>'1',
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));
+
     }
 }

@@ -12,9 +12,22 @@ use App\Http\Controllers\ComercioController;
 // });
 
 
-Route::apiResource('/provincias', ProvinciaController::class);
-Route::apiResource('/localidades', LocalidadController::class);
-Route::apiResource('/comercios', ComercioController::class);
 
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
+// Public routes
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::resource('/comercios', ComercioController::class);
+Route::resource('/localidades', LocalidadController::class);
+Route::resource('/provincias', ProvinciaController::class);
+
+
+// Protected routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    //Route::resource('/tasks', TasksController::class);
+});

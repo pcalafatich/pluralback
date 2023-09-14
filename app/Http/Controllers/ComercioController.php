@@ -8,7 +8,7 @@ use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\ComercioResource;
 use App\Http\Requests\StoreComercioRequest;
-use App\Http\Requests\UpdateComercioRequest;
+//use App\Http\Requests\UpdateComercioRequest;
 
 class ComercioController extends Controller
 {

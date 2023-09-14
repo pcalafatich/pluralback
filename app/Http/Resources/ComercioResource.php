@@ -41,7 +41,7 @@ class ComercioResource extends JsonResource
                 'sucursal' => $this->sucursal->nombre,
                 'localidad' => $this->localidad->nombre,
                 'promotor' => $this->promotor->nombre,
-                'imagen' => $this->imagen->id
+//                'imagen' => $this->imagen->id
             ]
 
         ];
