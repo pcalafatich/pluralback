@@ -16,8 +16,8 @@ class ComercioSeeder extends Seeder
     public function run()
     {
         DB::table('comercios')->insert(array(
-        'id'=>1,
-        'denominacion'=>'Comercio 001',
+        'id'=>3,
+        'denominacion'=>'Comercio 003',
         'razon_social'=>'La Primera SRL',
         'sucursal_id'=>1,
         'zona'=>'1',
@@ -46,8 +46,8 @@ class ComercioSeeder extends Seeder
 		));
 
 		DB::table('comercios')->insert(array(
-        'id'=>2,
-        'denominacion'=>'Comercio 002',
+        'id'=>4,
+        'denominacion'=>'Comercio 004',
         'razon_social'=>'Las Segunda SA',
         'sucursal_id'=>1,
         'zona'=>'1',

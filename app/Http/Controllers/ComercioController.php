@@ -21,8 +21,7 @@ class ComercioController extends Controller
 
     public function store(StoreComercioRequest $request)
     {
-
-        $request->validated();
+        $request->validated($request->all());
 
         $comercio = Comercio::create([
             'denominacion' => $request->denominacion,
@@ -40,7 +39,7 @@ class ComercioController extends Controller
             'fecha_alta' => $request->fecha_alta,
             'ingresos_brutos' => $request->ingresos_brutos,
             'tasa_descuento' => $request->tasa_descuento,
-            'email' => $request->mail,
+            'email' => $request->email,
             'password' => $request->password,
             'web' => $request->web,
             'facebook' => $request->facebook,
