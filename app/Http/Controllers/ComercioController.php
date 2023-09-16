@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Comercio;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\ComercioResource;
 use App\Http\Requests\StoreComercioRequest;
-//use App\Http\Requests\UpdateComercioRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ComercioController extends Controller
 {

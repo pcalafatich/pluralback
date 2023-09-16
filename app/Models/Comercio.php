@@ -35,7 +35,7 @@ class Comercio extends Model
 
     public function descuento()
     {
-        return this->hasMany(Descuento::classs);
+        return $this->hasMany(Descuento::class);
     }
 
 }

@@ -27,7 +27,7 @@ class ComercioResource extends JsonResource
                 'fecha_alta' => $this->fecha_alta,
                 'ingresos_brutos' => $this->ingresos_brutos,
                 'tasa_descuento' => $this->tasa_descuento,
-                'email' => $this->mail,
+                'email' => $this->email,
                 'password' => $this->password,
                 'web' => $this->web,
                 'facebook' => $this->facebook,

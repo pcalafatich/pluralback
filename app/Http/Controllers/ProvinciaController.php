@@ -4,57 +4,52 @@ namespace App\Http\Controllers;
 
 use App\Models\Provincia;
 use Illuminate\Http\Request;
+use App\Traits\HttpResponses;
+use App\Http\Resources\ProvinciaResource;
+use App\Http\Requests\StoreProvinciaRequest;
+
+
 
 class ProvinciaController extends Controller
 {
 
+    use HttpResponses;
+
     public function index()
     {
-        return Provincia::all();
+        return ProvinciaResource::collection(Provincia::all());
     }
 
-
-    public function store(Request $request)
+    public function store(StoreProvinciaRequest $request)
     {
-        $request->validate([
-            'nombre' => 'required',
+        $request->validated($request->all());
+
+        $provincia = Provincia::create([
+            'nombre' => $request->nombre
         ]);
 
-        $provincia = new Provincia;
-        $provincia->nombre = $request -> nombre;
-        $provincia->save();
-
-        return $provincia;
+        return new ProvinciaResource($provincia);
 
     }
-
 
     public function show(Provincia $provincia)
     {
-        return $provincia;
+        return new ProvinciaResource($provincia);
     }
 
     public function update(Request $request, Provincia $provincia)
     {
-        $request->validate([
-            'nombre' => 'required',
-        ]);
+        $provincia->update($request->all());
 
-        $provincia->nombre = $request -> nombre;
-        $provincia->update();
+        return new ProvinciaResource($provincia);
 
-        return $provincia;
     }
 
 
-    public function destroy($id)
+    public function destroy(Provincia $provincia)
     {
-        $provincia = Provincia::find($id);
-        if (is_null($provincia)) {
-            return response()->json('No se pudo realizar la operación correctamente', 404);
-        }
 
         $provincia->delete();
-        return response()->noContent();
+        return response(null, 204);
     }
 }
