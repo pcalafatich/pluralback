@@ -2,62 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Promotor;
 use Illuminate\Http\Request;
+use App\Http\Resources\PromotorResource;
+use App\Http\Requests\StorePromotorRequest;
 
 class PromotorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return PromotorResource::collection(Promotor::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(StorePromotorRequest $request)
     {
-        //
+        $request->validated($request->all());
+
+        $promotor = Promotor::create([
+            'nombre' => $request->nombre
+        ]);
+
+        return new PromotorResource($promotor);
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show(Promotor $promotor)
     {
-        //
+        return new PromotorResource($promotor);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Promotor $promotor)
     {
-        //
+        $promotor->update($request->all());
+
+        return new PromotorResource($promotor);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+
+    public function destroy(Promotor $promotor)
     {
-        //
+        $promotor->delete();
+        return response(null, 204);
     }
 }
