@@ -21,7 +21,8 @@ class PromotorController extends Controller
         $request->validated($request->all());
 
         $promotor = Promotor::create([
-            'nombre' => $request->nombre
+            'nombre' => $request->nombre,
+            'sucursal_id' => $request->sucursal_id
         ]);
 
         return new PromotorResource($promotor);

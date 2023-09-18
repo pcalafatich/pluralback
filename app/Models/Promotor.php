@@ -20,4 +20,9 @@ class Promotor extends Model
         return $this->hasMany(Comercio::class);
     }
 
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class);
+    }
+
 }

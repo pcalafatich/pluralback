@@ -18,7 +18,7 @@ class PromotorSeed extends Seeder
         DB::table('promotores')->insert(array(
             'id'=>1,
             'nombre'=>'Promotor 001',
-            'comercio_id'=>'1',
+            'sucursal_id'=>'1',
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));

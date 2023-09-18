@@ -15,7 +15,8 @@ class StorePromotorRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => ['required']
+            'nombre' => ['required'],
+            'sucursal_id' => ['required', 'numeric']
         ];
     }
 }
