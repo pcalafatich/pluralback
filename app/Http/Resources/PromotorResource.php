@@ -14,7 +14,8 @@ class PromotorResource extends JsonResource
                 'nombre' => $this->nombre
             ],
             'relationships' => [
-                'comercio' => $this->comercio->all()
+                'comercio' => $this->comercio->all(),
+                'sucursal' => $this->sucursal->nombre
             ]
         ];
     }

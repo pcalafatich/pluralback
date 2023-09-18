@@ -22,6 +22,21 @@ class PromotorSeed extends Seeder
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));
+        DB::table('promotores')->insert(array(
+            'id'=>2,
+            'nombre'=>'Promotor 002',
+            'sucursal_id'=>'2',
+            'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
+        ));
+
+        DB::table('promotores')->insert(array(
+            'id'=>3,
+            'nombre'=>'Promotor 003',
+            'sucursal_id'=>'3',
+            'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
+        ));
 
     }
 }

@@ -23,5 +23,21 @@ class SucursalSeeder extends Seeder
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));
+        DB::table('sucursales')->insert(array(
+            'id'=>2,
+            'nombre'=>'Sucursal 002',
+            'domicilio'=>'Av Colón 4567',
+            'estado'=>'1',
+            'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
+        ));
+        DB::table('sucursales')->insert(array(
+            'id'=>3,
+            'nombre'=>'Sucursal 003',
+            'domicilio'=>'Av Luro 9632',
+            'estado'=>'1',
+            'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
+        ));
     }
 }

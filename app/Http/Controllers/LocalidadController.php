@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Localidad;
 use Illuminate\Http\Request;
+use App\Traits\HttpResponses;
 
 class LocalidadController extends Controller
 {
+    use HttpResponses;
 
     public function index()
     {

@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Promotor;
 use Illuminate\Http\Request;
+use App\Traits\HttpResponses;
 use App\Http\Resources\PromotorResource;
 use App\Http\Requests\StorePromotorRequest;
 
 class PromotorController extends Controller
 {
+    use HttpResponses;
 
     public function index()
     {
@@ -30,9 +32,9 @@ class PromotorController extends Controller
     }
 
 
-    public function show(Promotor $promotor)
+    public function show(Promotor $promotore)
     {
-        return new PromotorResource($promotor);
+        return new PromotorResource($promotore);
     }
 
 
@@ -43,8 +45,6 @@ class PromotorController extends Controller
         return new PromotorResource($promotor);
 
     }
-
-
 
     public function destroy(Promotor $promotor)
     {
