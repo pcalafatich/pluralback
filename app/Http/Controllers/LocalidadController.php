@@ -22,7 +22,7 @@ class LocalidadController extends Controller
         $request->validated($request->all());
 
         $localidade = Localidad::create([
-            'localidad' => $request->nombre,
+            'nombre' => $request->nombre,
             'provincia_id' => $request->provincia_id,
             'codigo_postal' => $request->codigo_postal
         ]);
