@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Localidad;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
+use App\Http\Resources\LocalidadResource;
+use App\Http\Requests\StoreLocalidadRequest;
 
 class LocalidadController extends Controller
 {
@@ -12,59 +14,43 @@ class LocalidadController extends Controller
 
     public function index()
     {
-        return Localidad::all();
+        return LocalidadResource::collection(Localidad::all());
     }
 
-
-    public function store(Request $request)
+    public function store(StoreLocalidadRequest $request)
     {
-        $request->validate([
-            'localidad' => 'required',
-            'id_provincia' => 'required',
-            'codigo_postal' => 'required',
+        $request->validated($request->all());
+
+        $localidade = Localidad::create([
+            'localidad' => $request->nombre,
+            'provincia_id' => $request->provincia_id,
+            'codigo_postal' => $request->codigo_postal
         ]);
 
-        $localidad = new Localidad;
-        $localidad->localidad = $request->localidad;
-        $localidad->id_provincia = $request->id_provincia;
-        $localidad->codigo_postal = $request->codigo_postal;
+        return new LocalidadResource($localidade);
 
-        $localidad->save();
-
-        return $localidad;
     }
 
     public function show(Localidad $localidade)
     {
 
-        return $localidade;
+        return new LocalidadResource($localidade);
+
     }
 
     public function update(Request $request, Localidad $localidade)
     {
-        $request->validate([
-            'localidad' => 'required',
-            'id_provincia' => 'required',
-            'codigo_postal' => 'required'
-        ]);
+        $localidade->update($request->all());
 
-        $localidade->localidad = $request -> localidad;
-        $localidade->id_provincia = $request->id_provincia;
-        $localidade->codigo_postal = $request->codigo_postal;
-        $localidade->update();
-
-        return $localidade;
+        return new LocalidadResource($localidade);
 
     }
 
-    public function destroy($id)
+    public function destroy(Localidad $localidade)
     {
-        $localidad = Localidad::find($id);
-        if (is_null($localidad)) {
-            return response()->json('No se pudo realizar la operación correctamente', 404);
-        }
 
-        $localidad->delete();
-        return response()->noContent();
+        $localidade->delete();
+        return response(null, 204);
+
     }
 }
