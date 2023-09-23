@@ -2,81 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Imagen;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
+use App\Http\Resources\ImagenResource;
+use App\Http\Requests\StoreImagenRequest;
 
-class ImagenesController extends Controller
+class ImagenController extends Controller
 {
     use HttpResponses;
 
     public function index()
     {
-        //
+        return ImagenResource::collection(Imagen::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function store(StoreImagenRequest $request)
     {
-        //
+        $request->validated($request->all());
+
+        $imagene= Imagen::create([
+            'comercio_id' => $request->comercio_id
+        ]);
+
+        return new ImagenResource($imagene);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function show(Imagen $imagene)
     {
-        //
+        return new ImagenResource($imagene);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function update(Request $request, Imagen $imagene)
     {
-        //
+        $imagene->update($request->all());
+
+        return new ImagenResource($imagene);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function destroy(Imagen $imagene)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $imagene->delete();
+        return response(null, 204);
     }
 }

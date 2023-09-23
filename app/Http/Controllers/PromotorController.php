@@ -17,7 +17,6 @@ class PromotorController extends Controller
         return PromotorResource::collection(Promotor::all());
     }
 
-
     public function store(StorePromotorRequest $request)
     {
         $request->validated($request->all());
