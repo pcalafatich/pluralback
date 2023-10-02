@@ -8,8 +8,6 @@ use App\Traits\HttpResponses;
 use App\Http\Resources\ProvinciaResource;
 use App\Http\Requests\StoreProvinciaRequest;
 
-
-
 class ProvinciaController extends Controller
 {
 
@@ -44,7 +42,6 @@ class ProvinciaController extends Controller
         return new ProvinciaResource($provincia);
 
     }
-
 
     public function destroy(Provincia $provincia)
     {
