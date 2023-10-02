@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RubroController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\ComercioController;
 use App\Http\Controllers\PromotorController;
@@ -28,6 +29,7 @@ Route::resource('/imagenes', ImagenController::class);
 Route::resource('/localidades', LocalidadController::class);
 Route::resource('/promotores', PromotorController::class);
 Route::resource('/provincias', ProvinciaController::class);
+Route::resource('/rubros', RubroController::class);
 
 
 // Protected routes

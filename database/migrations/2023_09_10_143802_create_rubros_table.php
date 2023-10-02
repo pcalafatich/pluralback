@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('rubros', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('notas')->nullable();
             $table->timestamps();
         });
     }
