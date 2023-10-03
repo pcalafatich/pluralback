@@ -14,14 +14,15 @@ class Localidad extends Model
     protected $guarded = [];
 
     //RELACIONES
-
-    public function sucursales()
-    {
-        return $this->belongsTo(Sucursal::class);
-    }
-
+    
     public function provincia()
     {
         return $this->belongsTo(Provincia::class);
     }
+
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class);
+    }
+
 }

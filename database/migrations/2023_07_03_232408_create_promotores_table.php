@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('promotores', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->unsignedBigInteger('comercio_id');
+            $table->unsignedBigInteger('sucursal_id');
             $table->timestamps();
         });
     }

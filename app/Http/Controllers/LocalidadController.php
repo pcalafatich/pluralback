@@ -14,7 +14,7 @@ class LocalidadController extends Controller
 
     public function index()
     {
-        return LocalidadResource::collection(Localidad::all());
+        return LocalidadResource::collection(Localidad::with('provincia')->get());
     }
 
     public function store(StoreLocalidadRequest $request)
