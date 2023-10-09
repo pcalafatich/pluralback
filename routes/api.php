@@ -30,6 +30,7 @@ Route::resource('/localidades', LocalidadController::class);
 Route::resource('/promotores', PromotorController::class);
 Route::resource('/provincias', ProvinciaController::class);
 Route::resource('/rubros', RubroController::class);
+Route::resource('/sucursales', SucursalController::class);
 
 
 // Protected routes

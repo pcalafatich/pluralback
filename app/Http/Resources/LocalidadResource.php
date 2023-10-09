@@ -19,8 +19,6 @@ class LocalidadResource extends JsonResource
             'relationships' => [
                 'ID Provincia' => (string) $this->provincia->id,
                 'Nombre Provincia' => $this->provincia->nombre
-                // 'ID Sucursal'=> (string) $this->sucursal->id,
-                // 'sucursal' => $this->sucursal->nombre
             ],
 
         ];

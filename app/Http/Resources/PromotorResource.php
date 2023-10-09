@@ -11,11 +11,15 @@ class PromotorResource extends JsonResource
         return [
             'id' => (string) $this->id,
             'attributes' => [
-                'nombre' => $this->nombre
+                'nombre' => $this->nombre,
+                'sucursal_id' => $this->sucursal_id
+
             ],
             'relationships' => [
-                'comercio' => $this->comercio->all(),
-                'sucursal' => $this->sucursal->nombre
+                'ID Sucursal' => (string) $this->sucursal->id,
+                'sucursal' => $this->sucursal->nombre,
+                'ID Comercio' => (string) $this->id,
+                'Comercios' => $this->comercio->all()
             ]
         ];
     }

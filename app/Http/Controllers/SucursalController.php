@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sucursal;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
+use App\Http\Resources\SucursalResource;
 
 class SucursalController extends Controller
 {
@@ -11,7 +13,7 @@ class SucursalController extends Controller
 
     public function index()
     {
-        //
+        return SucursalResource::collection(Sucursal::all());
     }
 
     /**

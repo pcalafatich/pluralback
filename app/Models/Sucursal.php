@@ -24,4 +24,9 @@ class Sucursal extends Model
     {
         return $this->hasMany(Comercio::class);
     }
+
+    public function promotor()
+    {
+        return $this->hasMany(Promotor::class);
+    }
 }

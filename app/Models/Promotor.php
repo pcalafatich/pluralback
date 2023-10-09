@@ -14,15 +14,15 @@ class Promotor extends Model
     protected $guarded = [];
 
     //RELACIONES
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class);
+    }
 
     public function comercio()
     {
         return $this->hasMany(Comercio::class);
     }
 
-    public function sucursal()
-    {
-        return $this->belongsTo(Sucursal::class);
-    }
 
 }

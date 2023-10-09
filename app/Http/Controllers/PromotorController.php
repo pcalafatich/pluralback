@@ -21,33 +21,29 @@ class PromotorController extends Controller
     {
         $request->validated($request->all());
 
-        $promotor = Promotor::create([
+        $promotore = Promotor::create([
             'nombre' => $request->nombre,
             'sucursal_id' => $request->sucursal_id
         ]);
 
-        return new PromotorResource($promotor);
-
+        return new PromotorResource($promotore);
     }
-
 
     public function show(Promotor $promotore)
     {
         return new PromotorResource($promotore);
     }
 
-
-    public function update(Request $request, Promotor $promotor)
+    public function update(Request $request, Promotor $promotore)
     {
-        $promotor->update($request->all());
+        $promotore->update($request->all());
 
-        return new PromotorResource($promotor);
-
+        return new PromotorResource($promotore);
     }
 
-    public function destroy(Promotor $promotor)
+    public function destroy(Promotor $promotore)
     {
-        $promotor->delete();
+        $promotore->delete();
         return response(null, 204);
     }
 }

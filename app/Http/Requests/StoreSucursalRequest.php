@@ -13,7 +13,7 @@ class StoreSucursalRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreSucursalRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nombre' => ['required'],
+            'domicilio' => ['required'],
+            'estado' => ['required']
         ];
     }
 }
