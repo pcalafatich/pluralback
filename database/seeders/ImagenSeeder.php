@@ -38,7 +38,7 @@ class ImagenSeeder extends Seeder
 
         DB::table('imagenes')->insert(array(
             'id'=>4,
-            'comercio_id' => 41,
+            'comercio_id' => 4,
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));

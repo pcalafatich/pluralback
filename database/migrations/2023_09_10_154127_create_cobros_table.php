@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('importe');
             $table->smallInteger('mes_abono');
             $table->smallInteger('anio_abono');
-            $table->integer('ingresado_por');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

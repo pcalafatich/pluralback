@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('importe');
             $table->integer('mes_comision');
             $table->integer('anio_comision');
-            $table->boolean('status');
+            $table->boolean('estado');
             $table->string('cobrador');
             $table->timestamps();
         });
