@@ -13,5 +13,14 @@ class Cobro extends Model
 
     //RELACIONES
 
-    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function comercio()
+    {
+        return $this->belongsTo(Comercio::class);
+    }
+
 }

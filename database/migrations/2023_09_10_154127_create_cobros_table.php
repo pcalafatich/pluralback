@@ -18,8 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('comercio_id');
             $table->date('fecha_cobro');
             $table->integer('importe');
-            $table->integer('mes_abono');
-            $table->integer('anio_abono');
+            $table->smallInteger('mes_abono');
+            $table->smallInteger('anio_abono');
+            $table->integer('ingresado_por');
             $table->timestamps();
         });
     }
