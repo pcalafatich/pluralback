@@ -7,6 +7,7 @@ use App\Http\Controllers\RubroController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\ComercioController;
 use App\Http\Controllers\PromotorController;
+use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\LocalidadController;
 use App\Http\Controllers\ProvinciaController;
 

@@ -6,6 +6,7 @@ use App\Models\Sucursal;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use App\Http\Resources\SucursalResource;
+use App\Http\Requests\StoreSucursalRequest;
 
 class SucursalController extends Controller
 {
@@ -16,48 +17,34 @@ class SucursalController extends Controller
         return SucursalResource::collection(Sucursal::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreSucursalRequest $request)
     {
-        //
+        $request->validated($request->all());
+
+        $sucursale = Sucursal::create([
+            'nombre' => $request->nombre,
+            'domicilio' => $request->domicilio,
+            'estado' => $request->estado
+        ]);
+
+        return new SucursalResource($sucursale);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Sucursal $sucursale)
     {
-        //
+        return new SucursalResource($sucursale);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Sucursal $sucursale)
     {
-        //
+        $sucursale->update($request->all());
+
+        return new SucursalResource($sucursale);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Sucursal $sucursale)
     {
-        //
+        $sucursale->delete();
+        return response(null, 204);
     }
 }

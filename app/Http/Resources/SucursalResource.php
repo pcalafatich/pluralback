@@ -21,10 +21,10 @@ class SucursalResource extends JsonResource
                 'domicilio' => $this->domicilio,
                 'estado' => $this->estado
             ],
-            'relationships' => [
-                'ID Provincia' => (string) $this->provincia->id,
-                'Nombre Provincia' => $this->provincia->nombre
-            ],
+            // 'relationships' => [
+            //     'ID Provincia' => (string) $this->provincia->id,
+            //     'Nombre Provincia' => $this->provincia->nombre
+            // ],
 
         ];
     }
