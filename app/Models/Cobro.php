@@ -12,15 +12,14 @@ class Cobro extends Model
     protected $guarded = [];
 
     //RELACIONES
+    public function comercio()
+    {
+        return $this->belongsTo(Comercio::class);
+    }
 
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function comercio()
-    {
-        return $this->belongsTo(Comercio::class);
     }
 
 }

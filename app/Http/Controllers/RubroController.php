@@ -14,7 +14,7 @@ class RubroController extends Controller
 
     public function index()
     {
-        return RubroResource::collection(Rubro::all());
+        return RubroResource::collection(Rubro::paginate(5));
     }
 
     public function store(StoreRubroRequest $request)

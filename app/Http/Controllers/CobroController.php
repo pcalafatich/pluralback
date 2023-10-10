@@ -15,12 +15,16 @@ class CobroController extends Controller
 
     public function index()
     {
-        return CobroResource::collection(Cobro::with('comercio')->get());
+        // return CobroResource::collection(Cobro::with('comercio, user')->get());
+        return CobroResource::collection(Cobro::all());
+
     }
 
     public function store(StoreCobroRequest $request)
     {
+
         $request->validated($request->all());
+
 
         $cobro = Cobro::create([
             'comercio_id' => $request->comercio_id,
@@ -28,8 +32,9 @@ class CobroController extends Controller
             'importe' => $request->importe,
             'mes_abono' => $request->mes_abono,
             'anio_abono' => $request->anio_abono,
-            'ingresado_por' => Auth::user()->id,
-        ]);
+ //         'user_id' => Auth::user()->id,
+            'user_id' => $request->user_id
+]);
 
         return new CobroResource($cobro);
 
@@ -37,7 +42,6 @@ class CobroController extends Controller
 
     public function show(Cobro $cobro)
     {
-
         return new CobroResource($cobro);
 
     }

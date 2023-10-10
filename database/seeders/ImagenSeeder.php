@@ -17,8 +17,31 @@ class ImagenSeeder extends Seeder
     {
         DB::table('imagenes')->insert(array(
             'id'=>1,
+            'comercio_id' => 1,
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));
+
+        DB::table('imagenes')->insert(array(
+            'id'=>2,
+            'comercio_id' => 2,
+            'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
+        ));
+
+        DB::table('imagenes')->insert(array(
+            'id'=>3,
+            'comercio_id' => 3,
+            'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
+        ));
+
+        DB::table('imagenes')->insert(array(
+            'id'=>4,
+            'comercio_id' => 41,
+            'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
+        ));
+
     }
 }

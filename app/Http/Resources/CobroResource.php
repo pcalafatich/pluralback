@@ -17,13 +17,13 @@ class CobroResource extends JsonResource
                 'importe' => $this->importe,
                 'mes_abono' => $this->mes_abono,
                 'anio_abono' => $this->anio_abono,
-                'ingresado_por' => $this->ingresado_por
+                'user_id' => $this->user_id
 
             ],
             'relationships' => [
                 'ID Comercio' => (string) $this->comercio->id,
-                'Nombre Comercio' => $this->comercio->nombre,
-                'ID'=> (string)$this->user->id,
+                'Nombre Comercio' => $this->comercio->denominacion,
+                'ID Usuario'=> (string) $this->user->id,
                 'Ingresado Por' => $this->user->name,
             ],
 

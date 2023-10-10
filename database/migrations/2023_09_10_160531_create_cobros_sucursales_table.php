@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('cobros_sucursales', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sucursal_id');
+            $table->date('fecha_cobro');
             $table->integer('importe');
             $table->integer('mes_comision');
             $table->integer('anio_comision');

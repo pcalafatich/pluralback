@@ -29,7 +29,7 @@ class StoreCobroRequest extends FormRequest
             'importe' => ['required'],
             'mes_abono' => ['required'],
             'anio_abono' => ['required'],
-            'ingresado_por' => ['required']
+            'user_id' => ['required']
         ];
     }
 }
