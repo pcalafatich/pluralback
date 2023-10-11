@@ -32,10 +32,10 @@ Route::resource('/imagenes', ImagenController::class);
 Route::resource('/localidades', LocalidadController::class);
 Route::resource('/promotores', PromotorController::class);
 Route::resource('/provincias', ProvinciaController::class);
-Route::resource('/rubros', RubroController::class);
 Route::resource('/cobros', CobroController::class);
 Route::resource('/cobros_sucursales', CobroSucursalController::class);
 Route::resource('/sucursales', SucursalController::class);
+Route::resource('/rubros', 'API\RubroController::class');
 
 
 // Protected routes
