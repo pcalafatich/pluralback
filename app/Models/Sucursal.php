@@ -17,7 +17,7 @@ class Sucursal extends Model
 
     public function localidad()
     {
-        return $this->hasMany(Localidad::class);
+        return $this->belongsTo(Localidad::class);
     }
 
     public function comercios()

@@ -16,28 +16,16 @@ class StoreComercioRequest extends FormRequest
         return [
             'denominacion' => ['required', 'max:255'],
             'razon_social' => ['required', 'max:255'],
-            'sucursal_id' => 'required',
-            'zona' => 'required',
-            'promotor_id' => 'required',
             'responsable' => ['required', 'max:255'],
-            'logo' => 'required',
+            'logo' => ['image', 'dimensions: min_width=200, min_height=200'],
             'calle' => 'required',
             'altura' => 'required',
-            'piso' => 'required',
-            'local' => 'required',
             'telefono' => 'required',
             'localidad_id' => 'required',
-            'cuit' => 'required',
+            'rubro_id' => 'required',
             'fecha_alta' => 'required',
-            'ingresos_brutos' => 'required',
             'tasa_descuento' => 'required',
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => 'required',
-            'web' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
-            'twitter' => 'required',
-            'estado' => ['required', 'digits_between:1,4']
+            'email' => ['required', 'email', 'max:255', 'unique:users'],
         ];
     }
 }

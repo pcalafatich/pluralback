@@ -28,6 +28,10 @@ class Comercio extends Model
         return $this->belongsTo(Promotor::class);
     }
 
+    public function rubro()
+    {
+        return $this->belongsTo(Rubro::class);
+    }
     public function imagen()
     {
         return $this->hasMany(Imagen::class);
@@ -37,5 +41,6 @@ class Comercio extends Model
     {
         return $this->hasMany(Descuento::class);
     }
+
 
 }

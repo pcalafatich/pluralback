@@ -19,7 +19,8 @@ class SucursalSeeder extends Seeder
             'id'=>1,
             'nombre'=>'Sucursal 001',
             'domicilio'=>'Av Independencia 1234',
-            'estado'=>'1',
+            'localidad_id' => 173,
+            'estado'=>1,
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));
@@ -27,7 +28,8 @@ class SucursalSeeder extends Seeder
             'id'=>2,
             'nombre'=>'Sucursal 002',
             'domicilio'=>'Av Colón 4567',
-            'estado'=>'1',
+            'localidad_id' => 173,
+            'estado'=>1,
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));
@@ -35,7 +37,8 @@ class SucursalSeeder extends Seeder
             'id'=>3,
             'nombre'=>'Sucursal 003',
             'domicilio'=>'Av Luro 9632',
-            'estado'=>'1',
+            'localidad_id' => 173,
+            'estado'=>1,
             'created_at'=>DB::raw('CURRENT_TIMESTAMP'),
             'updated_at'=>DB::raw('CURRENT_TIMESTAMP')
         ));

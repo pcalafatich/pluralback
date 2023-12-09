@@ -13,9 +13,9 @@ class Descuento extends Model
 
     //RELACIONES
 
-    Public function rubro()
+        public function comercio()
     {
-        return this->belongsTo(Rubro::class);
+        return $this->belongsTo(Comercio::class);
     }
 
 }

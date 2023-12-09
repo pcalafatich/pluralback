@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             SucursalSeeder::class,
             CobroSeeder::class,
             CobroSucursalSeeder::class,
-            UserSeeder::class,
+//            UserSeeder::class,
             DescuentoSeeder::class,
             VencimientoSeeder::class,
             ConfigSeeder::class

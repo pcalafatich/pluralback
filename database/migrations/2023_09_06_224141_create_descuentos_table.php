@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('comercio_id');
             $table->integer('tasa');
-            $table->unsignedBigInteger('rubro_id');
-            $table->date('caducidad');
-            $table->integer('estado');
+            $table->string('producto');
+            $table->string('caducidad');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }

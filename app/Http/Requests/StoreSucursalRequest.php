@@ -15,9 +15,10 @@ class StoreSucursalRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => ['required'],
-            'domicilio' => ['required'],
-            'estado' => ['required']
+            'nombre' => 'required',
+            'domicilio' => 'required',
+            'localidad_id' => 'required',
+            'estado' => 'required|boolean:0,1,true,false'
         ];
     }
 }

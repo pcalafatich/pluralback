@@ -15,7 +15,8 @@ class StoreImagenRequest extends FormRequest
     public function rules()
     {
         return [
-            'comercio_id' => ['required', 'numeric']
+            'nombre' =>  ['image', 'dimensions: min_width=200, min_height=200'],
+            'comercio_id' => ['required']
         ];
     }
 }

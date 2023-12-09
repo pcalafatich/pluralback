@@ -22,6 +22,8 @@ class ImagenController extends Controller
         $request->validated($request->all());
 
         $imagene= Imagen::create([
+            'nombre' => $request->file('nombre')->store('public/logos'),
+            'info' => $request->info,
             'comercio_id' => $request->comercio_id
         ]);
 
@@ -45,4 +47,12 @@ class ImagenController extends Controller
         $imagene->delete();
         return response(null, 204);
     }
+
+    public function getImagenesAdicionales(Request $request)
+    {
+        return ImagenResource::collection(Imagen::where('id', $request->id));
+    }
+
+
+
 }

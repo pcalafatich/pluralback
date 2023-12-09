@@ -17,6 +17,7 @@ class ProvinciaSeeder extends Seeder
     {
         DB::table('provincias')->insert(array('nombre'=>'Buenos Aires'));
         DB::table('provincias')->insert(array('nombre'=>'CABA'));
+        DB::table('provincias')->insert(array('nombre'=>'Catamarca'));
         DB::table('provincias')->insert(array('nombre'=>'Chaco'));
         DB::table('provincias')->insert(array('nombre'=>'Chubut'));
         DB::table('provincias')->insert(array('nombre'=>'Córdoba'));

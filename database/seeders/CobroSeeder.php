@@ -16,7 +16,7 @@ class CobroSeeder extends Seeder
     public function run()
     {
         DB::table('cobros')->insert(array(
-            'id'=>1,
+//            'id'=>1,
             'comercio_id' =>'1',
             'fecha_cobro' =>'2023-10-10',
             'importe' => '4500',
@@ -28,8 +28,8 @@ class CobroSeeder extends Seeder
         ));
 
         DB::table('cobros')->insert(array(
-            'id'=>2,
-            'comercio_id' =>'3',
+//            'id'=>2,
+            'comercio_id' =>'2',
             'fecha_cobro' =>'2023-10-10',
             'importe' => '4500',
             'mes_abono' => '10',
@@ -40,7 +40,7 @@ class CobroSeeder extends Seeder
         ));
 
         DB::table('cobros')->insert(array(
-            'id'=>3,
+//            'id'=>3,
             'comercio_id' =>'4',
             'fecha_cobro' =>'2023-10-10',
             'importe' => '4500',
@@ -52,7 +52,7 @@ class CobroSeeder extends Seeder
         ));
 
         DB::table('cobros')->insert(array(
-            'id'=>4,
+//            'id'=>4,
             'comercio_id' =>'4',
             'fecha_cobro' =>'2023-10-10',
             'importe' => '4500',

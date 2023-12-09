@@ -14,7 +14,7 @@ class Localidad extends Model
     protected $guarded = [];
 
     //RELACIONES
-    
+
     public function provincia()
     {
         return $this->belongsTo(Provincia::class);
@@ -25,4 +25,13 @@ class Localidad extends Model
         return $this->belongsTo(Sucursal::class);
     }
 
+    public function comercio()
+    {
+        return $this->hasMany(Comercio::class);
+    }
+
+    public function localidadescondescuento()
+    {
+        return $this->through('comercio')->has('descuento');
+    }
 }

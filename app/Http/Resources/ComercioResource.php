@@ -23,6 +23,7 @@ class ComercioResource extends JsonResource
                 'local' => $this->local,
                 'telefono' => $this->telefono,
                 'localidad_id' => $this->localidad_id,
+                'rubro_id' => $this->localidad_id,
                 'cuit' => $this->cuit,
                 'fecha_alta' => $this->fecha_alta,
                 'ingresos_brutos' => $this->ingresos_brutos,
@@ -41,6 +42,8 @@ class ComercioResource extends JsonResource
                 'sucursal' => $this->sucursal->nombre,
                 'localidad' => $this->localidad->nombre,
                 'promotor' => $this->promotor->nombre,
+                'provincia' => $this->localidad->provincia->nombre,
+                'rubro' => $this->rubro->nombre
 //                'imagen' => $this->imagen->id
             ]
 

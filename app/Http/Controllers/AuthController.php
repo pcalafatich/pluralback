@@ -32,7 +32,7 @@ class AuthController extends Controller
 
     public function register(StoreUserRequest $request)
     {
-        $request->validated($request->only(['name', 'email', 'password']));
+        $request->validated($request->only(['name', 'email', 'password', 'is_admin']));
 
         $user = User::create([
             'name' => $request->name,

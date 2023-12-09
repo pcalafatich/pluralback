@@ -24,6 +24,7 @@ class SucursalController extends Controller
         $sucursale = Sucursal::create([
             'nombre' => $request->nombre,
             'domicilio' => $request->domicilio,
+            'localidad_id' => $request->localidad_id,
             'estado' => $request->estado
         ]);
 

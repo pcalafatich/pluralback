@@ -14,7 +14,7 @@ class RubroController extends Controller
 
     public function index()
     {
-        return RubroResource::collection(Rubro::paginate(5));
+        return RubroResource::collection(Rubro::all());
     }
 
     public function store(StoreRubroRequest $request)
@@ -48,4 +48,12 @@ class RubroController extends Controller
         $rubro->delete();
         return response(null, 204);
     }
+
+
+    public function rubrosapp()
+    {
+        return RubroResource::collection(Rubro::all());
+    }
+
+
 }
